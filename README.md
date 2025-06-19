@@ -4,7 +4,7 @@ A proof of concept that converts screen recordings with voice narration into aut
 
 <div>
     <a href="https://www.loom.com/share/d8724535ef7c4da589168639d906facf">
-      <p>Workflow Automation Made Easy 🚀 - Watch Video</p>
+      <p>Demo Video</p>
     </a>
     <a href="https://www.loom.com/share/d8724535ef7c4da589168639d906facf">
       <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/d8724535ef7c4da589168639d906facf-2c10e2ee62a0a3d9-full-play.gif">
