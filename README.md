@@ -1,6 +1,6 @@
-# "Show Us Once, Never Do It Again": Video-to-Workflow Automation
+# Video-to-Workflow Capture
 
-A proof of concept that converts screen recordings with voice narration into automated workflow diagrams. Instead of learning complex automation tools, users simply record themselves performing a task once and get an editable workflow structure.
+A proof of concept that turns a narrated screen recording into an editable workflow diagram. It connects multimodal analysis with a structured representation of actions, inputs, outputs and decision points.
 
 <div>
     <a href="https://www.loom.com/share/d8724535ef7c4da589168639d906facf">
@@ -10,8 +10,6 @@ A proof of concept that converts screen recordings with voice narration into aut
       <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/d8724535ef7c4da589168639d906facf-2c10e2ee62a0a3d9-full-play.gif">
     </a>
   </div>
-
-<a href="https://data-jaw-capture-workflow-poc-njengakariuki.replit.app/">Try It</a>
 
 ## Project Context
 
@@ -28,7 +26,7 @@ The system processes recordings through a four-stage AI pipeline:
 3. **Workflow Organization** - Claude structures the raw data into logical steps with inputs, outputs, and user considerations
 4. **Block Generation** - Claude converts organized workflows into an interactive block-based diagram with different intents (edit, view, search, generate, etc.)
 
-The frontend displays the resulting workflow as an editable React Flow diagram where users can modify connections, update block properties, and export the structure.
+The frontend displays the resulting workflow as an editable React Flow diagram where users can modify connections, update block properties, and export the structure as JSON. Workflow execution is outside this implementation; the "Run Workflow" control demonstrates the proposed interaction.
 
 ## Technical Stack Implementation
 
@@ -46,3 +44,11 @@ The frontend displays the resulting workflow as an editable React Flow diagram w
 **Video Processing**: FFmpeg for frame extraction and audio separation
 
 The proof of concept demonstrates end-to-end processing from video upload through AI analysis to interactive workflow visualization, storing intermediate outputs for debugging and iteration.
+
+## Project status and local setup
+
+Built in April 2025. The recorded demo shows the capture-to-diagram pipeline. The source preserves the implementation and design documents; uploaded screen recordings and extracted frames are excluded.
+
+For local exploration, install the dependencies with `npm ci`, install FFmpeg, and configure the process environment using [.env.example](.env.example). The pipeline requires Anthropic and Google AI credentials plus Google Cloud Storage and Speech-to-Text configuration. `npm run dev` starts the application. Runtime upload directories are created automatically.
+
+Review model IDs, cloud permissions and dependency versions before connecting current services. The published source has not been revalidated end to end against today's APIs. The current visual analysis samples the beginning, middle and end of a recording, so longer or more detailed workflows need a denser capture strategy.
